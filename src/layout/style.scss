@@ -1,0 +1,13 @@
+$navbar-height: 60px;
+.layout{height: 100vh;
+    &-main{height: calc(100% - $navbar-height);}
+}
+.top{width: 100%; height: $navbar-height; background-color: #fff; padding: 0 20px; box-sizing: border-box; border-bottom: 1px solid #eee;
+    &-title{font-size: 20px; color: #333; font-weight: bold;}
+    &-face{width: 30px; height: 30px; outline: none; border-radius: 50%; overflow: hidden; background-image: url(https://www.gaojundong.com/favicon.ico); background-size: 130%; background-position: center; cursor: pointer;}
+}
+.menu{ overflow: auto; height: 100%; background-color: #323640; position: relative;
+    &-real:not(.el-menu--collapse){width: 200px;}
+    &-btn{position: absolute; bottom: 20px; right: 1px; background-color: #fff; padding: 5px 10px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; cursor: pointer;}
+}
+.content{padding: 10px; box-sizing: border-box; overflow: auto;}

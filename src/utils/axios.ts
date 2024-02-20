@@ -23,14 +23,31 @@ class Server {
         })
     }
 
+    /**
+     * get请求
+     * @param url 请求地址
+     * @param data 入参
+     * @returns promise
+     */
     public get<T>(url:string, data:any = {}):Promise<T> {
         return this.axios_instance.get(url, {params: data})
     }
 
+    /**
+     * post请求
+     * @param url 请求地址
+     * @param data  请求体
+     * @returns promise
+     */
     public post<T>(url: string, data:any = {}):Promise<T> {
         return this.axios_instance.post(url, data)
     }
 
+    /**
+     * 网络请求
+     * @param config axios请求配置
+     * @returns promise
+     */
     public fetch<T>(config: AxiosRequestConfig):Promise<T> {
         return this.axios_instance(config)
     }

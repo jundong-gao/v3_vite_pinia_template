@@ -7,10 +7,10 @@
 
 <script setup lang="ts">
 import { useRouter } from "vue-router";
-import userStore from '@/store/User';
+import { useUserStore } from '@/store/useUserStore';
 const router = useRouter();
 
-const user_store = userStore();
+const user_store = useUserStore();
 
 
 function doLogin() {
@@ -21,4 +21,4 @@ function doLogin() {
     //  跳转到首页
     router.push('/')
 }
-</script>
+</script>@/store/useUserStore

@@ -1,7 +1,4 @@
 <template>
-    <hr>
-    设置页面
-    {{ info }}
     <Child v-model="info" />
 </template>
 

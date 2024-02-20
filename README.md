@@ -24,3 +24,4 @@
 
 ## hooks
 - useVModel 用于处理props数据 在表单上的应用。保证单项数据流
+- useFps 实时获取帧率fps

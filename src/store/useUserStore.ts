@@ -1,22 +1,22 @@
 import { defineStore } from 'pinia'
 
-interface IUser {
+export interface IUser {
     username: string,
     age: number,
     token: string
 }
-interface IWeather {
+export interface IWeather {
     city: string,
     temperature?: string
 }
 
-interface IState {
+export interface IState {
     userInfo: IUser,
     address: string,
     weatherInfo: IWeather
 }
 
-export default defineStore('user', {
+export const useUserStore =  defineStore('user', {
     state(): IState {
         return {
             userInfo: {} as IUser,

@@ -1,6 +1,6 @@
 import { computed } from 'vue'
 
-export function useVModel(props: Record<string, any>, propsName: string, emit:ReturnType<typeof defineEmits> ) {
+export function useVModel<T extends object>(props: Record<string, any>, propsName: string, emit:ReturnType<typeof defineEmits> ) {
     let model = computed({
         get() {
             const proxy = new Proxy(props[propsName], {
@@ -20,6 +20,6 @@ export function useVModel(props: Record<string, any>, propsName: string, emit:Re
         set(val) {
             emit(`update:${propsName}`, val)
         }
-    })
+    }) as T
     return model
 }
