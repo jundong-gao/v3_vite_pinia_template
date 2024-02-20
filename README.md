@@ -2,6 +2,16 @@
 > 此模板集成了 Vue3 + TS + Vite + Pinia + VueRouter + axios + tailwind.css 可以快速的开发项目
 > **node>=18**
 
+## 项目启动
+- 安装依赖
+```
+pnpm install
+```
+- 启动项目
+```bash
+npm run dev
+```
+
 
 ## 推荐IDEA
 - [VS Code](https://code.visualstudio.com/) 
@@ -25,3 +35,4 @@
 ## hooks
 - useVModel 用于处理props数据 在表单上的应用。保证单项数据流
 - useFps 实时获取帧率fps
+- useDebounce 防抖函数
