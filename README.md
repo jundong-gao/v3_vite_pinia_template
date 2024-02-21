@@ -4,7 +4,7 @@
 
 ## 项目启动
 - 安装依赖
-```
+```bash
 pnpm install
 ```
 - 启动项目
@@ -36,3 +36,14 @@ npm run dev
 - useVModel 用于处理props数据 在表单上的应用。保证单项数据流
 - useFps 实时获取帧率fps
 - useDebounce 防抖函数
+
+## 组件
+- BaseTable
+  - 通过配置生产表格
+  - 支持分页、自定义列、自定义表头
+  - 支持查询(配置与base-form一致)
+- BaseForm
+  - 通过配置的表单组件
+  - 支持自定义表单项
+- BaseDialog
+  - 通用模态框组件

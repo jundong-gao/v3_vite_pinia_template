@@ -1,6 +1,6 @@
 <template>
-    {{ model }}
-    <el-input v-model="model.age"></el-input>
+  {{ model }}
+  <el-input v-model="model.age"></el-input>
 </template>
 
 
@@ -8,10 +8,10 @@
 import { useVModel } from '@/hooks/useVModel'
 
 let props = defineProps({
-    modelValue: {
-        type: Object,
-        default: () => ({})
-    }
+  modelValue: {
+    type: Object,
+    default: () => ({})
+  }
 })
 let emits = defineEmits(['update:modelValue'])
 

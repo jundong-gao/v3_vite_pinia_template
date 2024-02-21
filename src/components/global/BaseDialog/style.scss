@@ -1,0 +1,7 @@
+.el-dialog{padding: 0}
+.el-dialog__header{padding-bottom: 0px;}
+.base-dialog-header{padding: 8px; box-sizing: border-box; background-color: #f5f7fa; border-bottom: 1px solid #e4e7ed;
+    &-title{font-size: 18px; color: #333;}
+}
+.base-dialog-content{padding: 8px; box-sizing: border-box; max-height: 60vh; overflow: auto;}
+.base-dialog-footer{padding: 8px; box-sizing: border-box; background-color: #f5f7fa; border-top: 1px solid #e4e7ed;}
