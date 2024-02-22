@@ -5,7 +5,7 @@ export interface IColumnItem {
   label: string,
   key: string,
   type: string,
-  span: number,
+  span?: number,
   data?: any[]
   // ... 其他属性
 }
@@ -58,9 +58,9 @@ export default defineComponent({
     renderFormContent(item: IColumnItem) {
       switch(item.type) {
         case 'input':
-          return <el-input v-model={this.formData[item.key]} placeholder='请输入' {...item}></el-input>
         case 'textarea':
-          return <el-input v-model={this.formData[item.key]} placeholder='请输入' {...item} type='textarea'></el-input>
+        case 'password':
+          return <el-input v-model={this.formData[item.key]} placeholder='请输入' {...item}></el-input>
         case 'inputNumber':
           return <el-input-number class="w-[100%]" controls-position="right" v-model={this.formData[item.key]} placeholder='请输入' {...item}></el-input-number>
         case 'select':
