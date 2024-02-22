@@ -14,10 +14,9 @@ const user_store = useUserStore();
 
 
 function doLogin() {
-    user_store.setUserInfo({username: '高天', age: 18, token: '123456'})
+    user_store.setUserInfo({username: 'Admin', age: 18, token: '123456'})
     user_store.setAddress('修改之后的地址')
     user_store.$state.weatherInfo = {city: '杭州', temperature: '20'}
-
     //  跳转到首页
     router.push('/')
 }

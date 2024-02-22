@@ -6,7 +6,10 @@
             </div>
             <div>
                 <el-dropdown @command="dropDownCommand">
-                    <div class="top-face"></div>
+                    <div class="flex-aic cursor-pointer outline-0">
+                        <div class="top-face mr-[10px]"></div>
+                        <div>{{ user_store.$state.userInfo.username }}</div>
+                    </div>
                     <template v-slot:dropdown>
                         <el-dropdown-menu>
                             <!-- <el-dropdown-item command="userinfo">个人信息</el-dropdown-item> -->
