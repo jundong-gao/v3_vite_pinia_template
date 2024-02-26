@@ -7,6 +7,7 @@ export interface IColumnItem {
   label: string,
   key: string,
   hidden?: boolean,
+  span?: number,
   search?: boolean,
   children?: IColumnItem[]
 }
@@ -55,14 +56,14 @@ export default defineComponent({
     searchColumns(): IColumnItem[] {
       let columns = this.columns.filter(column => column.search)
       // 搜素按钮
-      if(columns.length) columns.push({label: '', key: 'search'})
+      if(columns.length) columns.push({label: '', key: 'search', span: columns.length % this.searchRowNum == 0 ? 24 : 24 / this.searchRowNum})
       return columns
     }
   },
   render() {
     return (
       <div>
-        <div>
+        <div class="base-table-search">
           <el-form ref='searchFormRef' model={this.searchParams}>
             <base-form row-num={this.searchRowNum} columns={this.searchColumns} form-data={this.searchParams} v-slots={{
               search: () => {

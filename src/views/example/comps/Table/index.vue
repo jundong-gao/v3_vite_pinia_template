@@ -24,8 +24,8 @@ const columns = ref([
   ]},
   {label: '年龄', key: 'age', width: 600, search: true, type: 'select', data: []},
   {label: '性别', key: 'gender'},
-  {label: '电话', key: 'phone'},
-  {label: '地址', key: 'address'},
+  {label: '电话', key: 'phone', search: true, type: 'input'},
+  // {label: '地址', key: 'address', search: true, type: 'input'},
   {label: '操作', key: 'action', fixed: 'right', width: 200}
 ])
 
