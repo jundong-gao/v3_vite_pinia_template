@@ -1,5 +1,5 @@
 <template>
-  <base-table :columns="columns" stripe :api="getList" max-height="calc(100vh - 180px)">
+  <base-table :columns="columns" stripe :api="getList" max-height="calc(100vh - 210px)">
     <template #age="{ row }">自定义年龄表格单元 ====> {{ row }}</template>
     <template #info2Header="scope">自定义表头 ==== {{ scope.column.label }}</template>
     <template #action>
@@ -7,8 +7,6 @@
       <el-button size="small" link type="primary">编辑</el-button>
     </template>
   </base-table>
-
-  
 </template>
 
 
@@ -17,6 +15,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { test } from '@/api/test';
+import { ElMessage } from 'element-plus';
 const columns = ref([
   {label: '姓名', key: 'name', search: true, type: 'input'},
   {label: '信息', key: 'salary', children: [
@@ -40,7 +39,10 @@ const getList = (params: any) => {
   //     action: ''},
   // ]
   // })
-  return test({...params, page: params.pageNum, pageSize: 10}).then(res => {
+  let json = {...params, page: params.pageNum}
+  ElMessage.success(`请求参数===>${JSON.stringify(json)}`)
+
+  return test(json).then(res => {
     return {
       data: {
         list: res.data,

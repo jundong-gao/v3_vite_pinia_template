@@ -10,4 +10,6 @@ $navbar-height: 60px;
     &-real:not(.el-menu--collapse){width: 200px;}
     &-btn{position: absolute; bottom: 20px; right: 1px; background-color: #fff; padding: 5px 10px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; cursor: pointer;}
 }
-.content{padding: 10px; box-sizing: border-box; overflow: auto;}
+.content{padding: 10px; box-sizing: border-box; overflow: auto; background-color:#f6f7f9; height: 100%;
+    &-routerview{background-color: #fff; padding: 16px; box-sizing: border-box; border-radius: 4px;}
+}
