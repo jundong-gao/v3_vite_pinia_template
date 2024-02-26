@@ -29,7 +29,9 @@
                 <base-menu class="menu-real" :isCollapse="isCollapse"></base-menu>
             </div>
             <div class="content flex-grow">
-                <router-view class="content-routerview"></router-view>
+                <div class="content-routerview">
+                    <router-view></router-view>
+                </div>
             </div>
         </div>
     </div>

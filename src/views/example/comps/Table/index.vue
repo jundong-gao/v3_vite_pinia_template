@@ -22,7 +22,9 @@ const columns = ref([
     {label: '信息1', key: 'info1'},
     {label: '信息2', key: 'info2'},
   ]},
-  {label: '年龄', key: 'age', width: 600, search: true, type: 'select', data: []},
+  {label: '年龄', key: 'age', width: 600, search: true, type: 'select', data: [], async: () => {
+    return Promise.resolve([{label: '18-25岁', value: 1}, {label: '26-35岁', value: 2}])
+  }},
   {label: '性别', key: 'gender'},
   {label: '电话', key: 'phone', search: true, type: 'input'},
   // {label: '地址', key: 'address', search: true, type: 'input'},

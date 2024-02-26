@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 import './style.scss'
 
 export interface IColumnItem {
@@ -6,7 +6,8 @@ export interface IColumnItem {
   key: string,
   type: string,
   span?: number,
-  data?: any[]
+  data?: any[],
+  async?: () => Promise<Array<any>>,
   // ... 其他属性
 }
 
@@ -29,11 +30,17 @@ export default defineComponent({
       default: 20
     }
   },
+  setup(props) {
+    // 选项通过异步获取
+    props.columns.forEach(async (item: IColumnItem) => {
+      if(item.async) item.data = await item.async()
+    })
+  },
   render() {
     return (
       <el-row gutter={this.colGutter}>
         {
-          this.columns.map(item => {
+          this.columns.map((item: IColumnItem) => {
             return (
               <el-col span={item.span ?? 24 / this.rowNum}>
                 {this.renderFormItem(item)}
@@ -48,6 +55,7 @@ export default defineComponent({
     renderFormItem(item: IColumnItem) {
       // 如果有插槽，就展示插槽内容
       if(this.$slots[item.key]) return this.$slots[item.key]?.(item)
+
       return (
         <el-form-item {...item} prop={item.key}>
           { this.renderFormContent(item) }
@@ -56,6 +64,15 @@ export default defineComponent({
     },
 
     renderFormContent(item: IColumnItem) {
+        const asyncOptions = ref([]);
+
+      // 异步加载数据的函数
+      const fetchData = async (item) => {
+        // 调用异步函数获取数据
+        const data = await item.async?.();
+        // 将数据存储在ref中
+        asyncOptions.value = data as [];
+      };
       switch(item.type) {
         case 'input':
         case 'textarea':
@@ -64,6 +81,11 @@ export default defineComponent({
         case 'inputNumber':
           return <el-input-number class="w-[100%]" controls-position="right" v-model={this.formData[item.key]} placeholder='请输入' {...item}></el-input-number>
         case 'select':
+          // if(item.async) {
+          //   fetchData(item)
+          // }
+          // console.log('完成', asyncOptions.value)
+
           return (
             <el-select vModel={this.formData[item.key]} placeholder='请选择' {...item}>
               {

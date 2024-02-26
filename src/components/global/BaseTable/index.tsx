@@ -105,8 +105,10 @@ export default defineComponent({
       if(this.$slots[column.key]) slotScope.default = (scope: any) => this.$slots[column.key]?.(scope)
       if(this.$slots[column.key + 'Header']) slotScope.header = (scope: any) => this.$slots[column.key + 'Header']?.(scope)
 
+      let cloneProps = {...column}
+      delete cloneProps.children
       return (
-        <el-table-column align='center' {...column} prop={column.key} v-slots={slotScope}>
+        <el-table-column align='center' {...cloneProps} prop={column.key} v-slots={slotScope}>
           {/* 递归渲染多层级表格 */}
           {column.children ? column.children.map(v => {
             return this.renderTableColumn(v)

@@ -41,9 +41,10 @@ npm run dev
 - BaseTable
   - 通过配置生产表格
   - 支持分页、自定义列、自定义表头
-  - 支持查询(配置与base-form一致)
+  - 支持查询(配置与BaseForm一致)
 - BaseForm
   - 通过配置的表单组件
   - 支持自定义表单项
+  - select/radio等类型 支持async: ()=>Promise<Array<any>> 异步获取数据
 - BaseDialog
   - 通用模态框组件
