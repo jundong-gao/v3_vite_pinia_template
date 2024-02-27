@@ -38,7 +38,7 @@ const resetMark = () => {
   div.style.backgroundImage = `url(${base64})`
   div.style.backgroundSize = `${size}px ${size}px`
   div.style.backgroundRepeat = 'repeat'
-  div.style.zIndex = config.value.zIndex
+  div.style.zIndex = String(config.value.zIndex)
   div.style.inset = '0'
   div.style.pointerEvents = 'none'
   parentRef.value.appendChild(div)

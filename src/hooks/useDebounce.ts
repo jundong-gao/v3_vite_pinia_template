@@ -10,6 +10,6 @@ export function useDebounce<T extends (...args: any[]) => void> (func: T, delay:
         if(timer) clearTimeout(timer)
         timer = setTimeout(() => {
             func.apply(this, args)
-        }, delay)
+        }, delay) as unknown as number
     } as T
 }

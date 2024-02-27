@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import { useUserStore } from '@/store/useUserStore'
 const routes: Array<RouteRecordRaw> = [
     {path: '/:pathMatch(.*)*', redirect: '/'},
@@ -30,10 +30,9 @@ const routes: Array<RouteRecordRaw> = [
     ]},
     {path: '/login', component: () => import('@/views/Login/index.vue')}
 ]
-
 const router = createRouter({
     routes,
-    history: createWebHashHistory()
+    history: createWebHistory(import.meta.env.BASE_URL)
 })
 
 // 路由白名单
