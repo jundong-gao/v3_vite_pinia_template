@@ -24,6 +24,7 @@ const routes: Array<RouteRecordRaw> = [
             children: [
                 {path: '/other/readbase64', meta: {title: '读取文件原始内容'}, component: () => import('@/views/example/other/ReadBase64/index.vue')},
                 {path: '/other/sendRequest', meta: {title: '发送请求'}, component: () => import('@/views/example/other/SendRequest/index.vue')},
+                {path: '/other/uploadFace', meta: {title: '修改头像'}, component: () => import('@/views/example/other/UploadFace/index.vue')},
             ]
         }
     ]},

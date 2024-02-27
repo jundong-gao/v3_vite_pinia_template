@@ -1,0 +1,10 @@
+.base-cut-img{position: relative;}
+.base-cut-img-mask{position: absolute; background-color: rgba(#000, .3);}
+.base-cut-img-btns{position: relative;
+  &-item{width: 6px; aspect-ratio: 1; box-sizing: border-box; border: 1px solid #fff; position: absolute; z-index: 9999;
+    &.left-top{left: 0; top: 0; cursor: nw-resize;}
+    &.left-bottom{left: 0; bottom: 0; cursor: sw-resize;}
+    &.right-top{right: 0; top: 0; cursor: ne-resize;}
+    &.right-bottom{right: 0; bottom: 0; cursor: se-resize;}
+  }
+}
