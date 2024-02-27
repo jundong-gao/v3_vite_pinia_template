@@ -9,6 +9,7 @@ const routes: Array<RouteRecordRaw> = [
                 {path: '/comps/form', meta: {title: '表单'}, component: () => import('@/views/example/comps/From/index.vue')},
                 {path: '/comps/table', meta: {title: '表格'}, component: () => import('@/views/example/comps/Table/index.vue')},
                 {path: '/comps/dialog', meta: {title: '模态框'}, component: () => import('@/views/example/comps/Dialog/index.vue')},
+                {path: '/comps/watermark', meta: {title: '水印'}, component: () => import('@/views/example/comps/WaterMark/index.vue')},
             ]
         },
         {path: '/hooks', meta: {title: 'hooks'}, redirect: '/hooks/fps', 

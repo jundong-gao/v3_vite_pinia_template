@@ -36,6 +36,7 @@ npm run dev
 - useVModel 用于处理props数据 在表单上的应用。保证单项数据流
 - useFps 实时获取帧率fps
 - useDebounce 防抖函数
+- useWaterMarkBg 生成水印最小单元背景图
 
 ## 组件
 - BaseTable
@@ -48,3 +49,6 @@ npm run dev
   - select/radio等类型 支持async: ()=>Promise<Array<any>> 异步获取数据
 - BaseDialog
   - 通用模态框组件
+- BaseWaterMark
+  - 通用水印组件
+  - 接收config属性 :config={text: string, color: string, fontSize: number, gap: number, zIndex: number}
