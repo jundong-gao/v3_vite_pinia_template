@@ -19,6 +19,7 @@
     "pinia-plugin-persistedstate": "^3.2.1",
     "sass": "^1.71.0",
     "scss": "^0.2.4",
+    "vite-plugin-compression": "^0.5.1",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5",
     "vuex": "^4.1.0"
