@@ -14,10 +14,19 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 
-let left = ref(0);
-let top = ref(0);
-let width = ref(50);
-let height = ref(50);
+interface IProps {
+  left?: number,
+  top?: number,
+  width?: number,
+  height?: number,
+}
+let props = defineProps<IProps>()
+
+
+let left = ref(props.left || 0);
+let top = ref(props.top || 0);
+let width = ref(props.width || 50);
+let height = ref(props.height || 50);
 
 let maskStyle = computed(() => ({
   width: `${width.value}px`, 
@@ -77,28 +86,54 @@ const dianDown = (e: MouseEvent, type: mousetype) => {
   dianStart.value.left = left.value;
   dianStart.value.top = top.value;
   isDianDown.value = true
+  // 获取最外层父元素的宽高
+  let outerParentWidth = (e.target as Element).parentElement?.parentElement?.getBoundingClientRect().width || 0
+  let outerParentHeight = (e.target as Element).parentElement?.parentElement?.getBoundingClientRect().height || 0
 
   document.onmousemove = (e: MouseEvent) => {
     if(!isDianDown.value) return
     if(type === 'right-bottom'){
       height.value = dianStart.value.height +  e.clientY - dianStart.value.y;
       width.value = dianStart.value.width +  e.clientX - dianStart.value.x;
+      height.value = Math.min(outerParentHeight - top.value, height.value)
+      width.value = Math.min(outerParentWidth - left.value, width.value)
     }
     if(type === 'left-top') {
-      left.value = dianStart.value.left +  e.clientX - dianStart.value.x;
-      top.value = dianStart.value.top +  e.clientY - dianStart.value.y;
-      width.value = dianStart.value.width -  e.clientX + dianStart.value.x;
-      height.value = dianStart.value.height -  e.clientY + dianStart.value.y;
+      left.value = Math.max(dianStart.value.left +  e.clientX - dianStart.value.x, 0);
+      top.value = Math.max( dianStart.value.top +  e.clientY - dianStart.value.y, 0);
+      if(left.value > 0) {
+        width.value = dianStart.value.width -  e.clientX + dianStart.value.x;
+      }
+      if(top.value > 0) {
+        height.value = dianStart.value.height -  e.clientY + dianStart.value.y;
+      }
     }
     if(type === 'left-bottom') {
       left.value = dianStart.value.left +  e.clientX - dianStart.value.x;
-      width.value = dianStart.value.width -  e.clientX + dianStart.value.x;
+      left.value = Math.max(left.value, 0);
+
+      if(left.value > 0) {
+        width.value = dianStart.value.width -  e.clientX + dianStart.value.x;
+      }
+
       height.value = dianStart.value.height +  e.clientY - dianStart.value.y;
+
+      if(height.value > outerParentHeight - top.value) height.value = outerParentHeight - top.value;
+      
     }
     if(type === 'right-top') {
       top.value = dianStart.value.top +  e.clientY - dianStart.value.y;
+      top.value = Math.max(top.value, 0);
+
+
       width.value = dianStart.value.width +  e.clientX - dianStart.value.x;
-      height.value = dianStart.value.height -  e.clientY + dianStart.value.y;
+
+      if(top.value > 0) {
+        height.value = dianStart.value.height -  e.clientY + dianStart.value.y;
+      }
+
+      if(width.value > outerParentWidth - left.value) width.value = outerParentWidth - left.value;
+
     }
   }
 

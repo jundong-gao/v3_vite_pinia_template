@@ -4,7 +4,7 @@
     
     <div class="flex">
       <div class="left flex-jac">
-        <base-cut-img v-if="imgblob" ref="cutRef"  class="left-img-box">
+        <base-cut-img v-if="imgblob" ref="cutRef"  class="left-img-box" :left="80" :top="80" :width="140" :height="140">
           <img class="left-img" :src="imgblob" draggable="false">
         </base-cut-img>
         <el-upload v-if="!imgblob" accept="image/*" action="#" :show-file-list="false" :http-request="changeImage">
