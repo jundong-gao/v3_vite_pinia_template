@@ -10,9 +10,7 @@ export default defineConfig({
   plugins: [
     vue(),
     vueJsx(),
-    viteCompression({
-      ext: '.gz',
-    })
+    viteCompression()
   ],
   base: '/vue3',
   resolve: {
@@ -24,5 +22,13 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
     open: true
+  },
+  build: {
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true
+      }
+    }
   }
 })
