@@ -1,0 +1,1 @@
+import{t as s}from"./test-BBcpamD4.js";import{d as t,a,o as e,h as n,w as o,f as r,E as i}from"./index-ZCgGiMnq.js";const u=t({__name:"index",setup(t){function u(){s({page:20,pageSize:10}).then((s=>{i.success(JSON.stringify(s.data))}))}return(s,t)=>{const i=a("el-button");return e(),n(i,{onClick:u},{default:o((()=>[r("发送请求")])),_:1})}}});export{u as default};
