@@ -4,7 +4,10 @@
             <div class="flex-aic">
                 <div class="top-title">GAdmin</div>
             </div>
-            <div>
+            <div class="flex items-center">
+                <a target="_blank" class="link-item flex items-center cursor-pointer" href="https://github.com/jundong-gao/v3_vite_pinia_template.git">
+                    <img src="../assets/github.svg" class="link-item-icon"> 
+                </a>
                 <el-dropdown @command="dropDownCommand">
                     <div class="flex-aic cursor-pointer outline-0">
                         <div class="top-face mr-[10px]"></div>
@@ -12,7 +15,6 @@
                     </div>
                     <template v-slot:dropdown>
                         <el-dropdown-menu>
-                            <!-- <el-dropdown-item command="userinfo">个人信息</el-dropdown-item> -->
                             <el-dropdown-item command="logout">退出</el-dropdown-item>
                         </el-dropdown-menu>
                     </template>
