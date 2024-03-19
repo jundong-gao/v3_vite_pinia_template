@@ -1,14 +1,26 @@
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosError } from 'axios';
+import axios, { AxiosInstance, AxiosRequestConfig, AxiosError, Canceler, CreateAxiosDefaults } from 'axios';
 
 class Server {
     // axios实例
-    axios_instance: AxiosInstance;
+    private axios_instance: AxiosInstance;
+    private cancel: Canceler | null
 
-    constructor(baseURL: string = '/') {
+    constructor(config: CreateAxiosDefaults) {
+        this.cancel = null
         this.axios_instance = axios.create({
-            baseURL,
-            timeout: 3000,
+            ...config,
+            cancelToken: this.setCancelToken()
         })
+        this.setInterceptor()
+    }
+
+    private setCancelToken() {
+        return new axios.CancelToken((cancel) => {
+            this.cancel = cancel
+        })
+    }
+
+    private setInterceptor() {
         // 请求拦截
         this.axios_instance.interceptors.request.use(config => {
             return config
@@ -19,6 +31,9 @@ class Server {
         this.axios_instance.interceptors.response.use(respose => {
             return respose.data
         }, (err: AxiosError) => {
+            if(axios.isCancel(err)) {
+                console.log('请求被取消::::::::::::::::', err.message)
+            }
             return Promise.reject(err)
         })
     }
@@ -30,7 +45,18 @@ class Server {
      * @returns promise
      */
     public get<T>(url:string, data:any = {}):Promise<T> {
-        return this.axios_instance.get(url, {params: data})
+        let json: AxiosRequestConfig = {
+            params: {
+                ...data
+            },
+            cancelToken: undefined
+        }
+        if(json.params.cancelToken) {
+            json.cancelToken = data.cancelToken
+            delete json.params.cancelToken
+        }
+
+        return this.axios_instance.get(url, json)
     }
 
     /**
@@ -51,7 +77,19 @@ class Server {
     public fetch<T>(config: AxiosRequestConfig):Promise<T> {
         return this.axios_instance(config)
     }
+
+    /**
+     * 取消所有请求
+     * @returns void
+     */
+    public cancelAllRequest(message?: string) {
+        this.cancel!(message)
+        this.axios_instance.defaults.cancelToken = this.setCancelToken()
+    }
 }
 
 
-export default new Server()
+export default new Server({
+    baseURL: '/',
+    timeout: 15000
+})
