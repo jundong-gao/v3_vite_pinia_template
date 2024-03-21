@@ -9,7 +9,7 @@ import { useIntervalCallback } from '@/hooks/useIntervalCallback'
 import { ElMessage } from 'element-plus'
 
 const { time, handle } = useIntervalCallback(10, () => {
-  console.log('::::::::::::::::', 123)
+  console.log('::::::::::::::::点击了发送',)
   ElMessage.success('发送成功')
 })
 

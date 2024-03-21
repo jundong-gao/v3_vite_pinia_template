@@ -9,7 +9,9 @@ export default defineComponent({
     isCollapse: Boolean
   },
   setup() {
-
+    return {
+      
+    }
   },
   computed: {
     menus() {
@@ -32,12 +34,15 @@ export default defineComponent({
   },
   methods: {
     renderMenuItem(menu: RouteRecordRaw) {
+      if(menu.meta?.hideMenu) return null
       if (menu.children) {
         return (
           <el-sub-menu index={menu.path} v-slots={{
             'title': () => (
               <Fragment>
-                <el-icon><i-ep-menu /></el-icon>
+                <el-icon>
+                  <i-ep-menu></i-ep-menu>
+                </el-icon>
                 <span>{menu.meta?.title}</span>
               </Fragment>
             )
@@ -60,7 +65,9 @@ export default defineComponent({
         </el-menu-item>
       )
     }
-  }
+  },
+  
+
 })
 
 </script>

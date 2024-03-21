@@ -57,6 +57,15 @@ export default defineConfig({
         drop_debugger: true
       }
     },
-    cssCodeSplit: true
+    cssCodeSplit: true,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            return `vender_${id.toString().split('node_modules/')[1].split('/')[1].toString()}`;
+          }
+        }
+      }
+    }
   }
 })

@@ -6,9 +6,9 @@ export interface IMetaData {
    */
   title?: string,
   /**
-   * 按钮菜单
+   * 按钮菜单  I Ep开头, elementPlus ep图标库
    */
-  icon?: Component,
+  icon?: string,
   /**
    * 是否隐藏菜单
    */

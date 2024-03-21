@@ -4,7 +4,7 @@ import { useUserStore } from '@/store/useUserStore'
 const routes: Array<RouteRecordRaw> = [
     {path: '/:pathMatch(.*)*', redirect: '/'},
     {path: '/', component: () => import('@/layout/index.vue'), redirect: '/home', children: [
-        {path: '/home', meta: {title: '简介'}, component: () => import('@/views/example/Home/index.vue')},
+        {path: '/home', meta: {title: '简介', icon: 'i-ep-location'}, component: () => import('@/views/example/Home/index.vue')},
         {path: '/comps', meta: {title: '组件'}, redirect: '/comps/form', 
             children: [
                 {path: '/comps/form', meta: {title: '表单'}, component: () => import('@/views/example/comps/From/index.vue')},
@@ -29,7 +29,7 @@ const routes: Array<RouteRecordRaw> = [
                 {path: '/other/uploadFace', meta: {title: '修改头像'}, component: () => import('@/views/example/other/UploadFace/index.vue')},
             ]
         },
-        {path: '/test', meta: {title: '测试'}, component: () => import('@/views/test/index.vue')},
+        {path: '/test', meta: {title: '测试', hideMenu: true}, component: () => import('@/views/test/index.vue')},
     ]},
     {path: '/login', component: () => import('@/views/Login/index.vue')}
 ]
