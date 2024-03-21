@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import { useUserStore } from '@/store/useUserStore'
+
 const routes: Array<RouteRecordRaw> = [
     {path: '/:pathMatch(.*)*', redirect: '/'},
     {path: '/', component: () => import('@/layout/index.vue'), redirect: '/home', children: [
