@@ -18,6 +18,7 @@ const routes: Array<RouteRecordRaw> = [
                 {path: '/hooks/debounce', meta: {title: '防抖'}, component: () => import('@/views/example/hooks/Debounce/index.vue')},
                 {path: '/hooks/vmodel', meta: {title: 'vmodel'}, component: () => import('@/views/example/hooks/VModel/index.vue')},
                 {path: '/hooks/uuid', meta: {title: 'uuid'}, component: () => import('@/views/example/hooks/UUID/index.vue')},
+                {path: '/hooks/intervalCallback', meta: {title: 'intervalCallback'}, component: () => import('@/views/example/hooks/IntervalCallback/index.vue')},
             ]
         },
         {path: '/other', meta: {title: '其他'}, redirect: '/other/readbase64', 
