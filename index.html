@@ -7,7 +7,23 @@
     <title>GAdmin</title>
   </head>
   <body>
+    <div class="loading flex items-center justify-center bg-slate-100 fixed inset-0">
+      <div class="w-5 flex items-center justify-between flex-wrap animate-spin">
+        <div class="rounded-full bg-slate-400 bg w-2 h-2 mr-1 mb-1"></div>
+        <div class="rounded-full bg-slate-500 w-2 h-2 mb-1"></div>
+        <div class="rounded-full bg-slate-600 w-2 h-2 mr-1"></div>
+        <div class="rounded-full bg-slate-700 w-2 h-2"></div>
+      </div>
+    </div>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
+
+    <script>
+      // 页面渲染完成  移除loading
+      window.onload = function() {
+        document.querySelector('.loading').remove()
+      }
+      
+    </script>
   </body>
 </html>

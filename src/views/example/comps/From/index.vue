@@ -14,8 +14,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import { ElForm, ElMessage } from 'element-plus'
+import { ElForm } from 'element-plus';
+
 const baseFromRef = ref({} as InstanceType<typeof ElForm>)
 
 const formData = ref({

@@ -40,7 +40,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
 import router from '@/router';
 import { useUserStore } from '@/store/useUserStore'
 let isCollapse = ref(false)

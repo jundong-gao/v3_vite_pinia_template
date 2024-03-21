@@ -13,9 +13,7 @@
 
 
 <script setup lang="ts">
-import { ref } from 'vue';
 import { test } from '@/api/test';
-import { ElMessage } from 'element-plus';
 const columns = ref([
   {label: '姓名', key: 'name', search: true, type: 'input'},
   {label: '信息', key: 'salary', children: [

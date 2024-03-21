@@ -6,6 +6,7 @@ import router from './router'
 import { createPinia } from 'pinia'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import '@/styles/tailwind.css'
+import 'element-plus/dist/index.css'
 
 
 const app = createApp(App)
