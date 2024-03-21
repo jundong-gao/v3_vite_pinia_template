@@ -1,4 +1,5 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosError, Canceler, CreateAxiosDefaults } from 'axios';
+import { ElMessage } from 'element-plus';
 
 class Server {
     // axios实例
@@ -29,10 +30,19 @@ class Server {
         })
         // 响应拦截
         this.axios_instance.interceptors.response.use(respose => {
+            
+            // 根据返回状态码判断，是否需要全局弹窗
+            // if(respose.data.code !==  200) {
+            //     ElMessage.error(respose.data?.message || '网络错误')
+            // }
+            
             return respose.data
         }, (err: AxiosError) => {
+            let message = err.message
             if(axios.isCancel(err)) {
                 console.log('请求被取消::::::::::::::::', err.message)
+            }else{
+                ElMessage.error(message)
             }
             return Promise.reject(err)
         })
