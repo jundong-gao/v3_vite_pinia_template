@@ -62,7 +62,9 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
-            return `vender_${id.toString().split('node_modules/')[1].split('/')[1].toString()}`;
+            let filename = id.toString().split('node_modules/')[1].split('/')[1].toString()
+            if(id.endsWith('.js') || id.endsWith('.mjs')) return `js/gaojundong_${filename}`;
+            if(id.endsWith('.css')) return `css/gaojundong_${filename}`;
           }
         }
       }
