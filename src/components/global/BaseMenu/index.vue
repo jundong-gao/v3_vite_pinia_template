@@ -57,7 +57,6 @@ export default defineComponent({
           <el-icon>
             <i-ep-menu></i-ep-menu>
           </el-icon>
-          icon
         </el-menu-item>
       )
     }

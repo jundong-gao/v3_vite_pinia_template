@@ -30,6 +30,7 @@
 
 <script setup lang="ts">
 
+import { UploadRequestOptions } from 'element-plus';
 import { computed, ref, Ref } from 'vue'
 
 const cutRef = ref({} as Element | Ref<any>)
@@ -37,8 +38,9 @@ const maskStyle = computed(() => cutRef.value?.maskStyle)
 const imgblob = ref('')
 const previewurl = ref('')
 
-const changeImage = (file: any) => {
+const changeImage = (file: UploadRequestOptions) => {
   imgblob.value = URL.createObjectURL(file.file)
+  return Promise.resolve() // 兼容http-request自定义方法的类型<UploadRequestHandler>  需要return一个Primise或者XHR
 }
 
 

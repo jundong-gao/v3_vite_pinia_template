@@ -43,6 +43,7 @@ npm run dev
 - useFps 实时获取帧率fps
 - useDebounce 防抖函数
 - useWaterMarkBg 生成水印最小单元背景图
+- useIntervalCallback 指定时间执行回调函数(如：多少秒后获取验证码)
 
 ## 组件
 - BaseTable
