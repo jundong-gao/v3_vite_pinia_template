@@ -1,5 +1,11 @@
 ## 简介
-> 此模板集成了 Vue3 + TS + Vite + Pinia + VueRouter + axios + tailwind.css 可以快速的开发项目
+- vue3+pinia
+- 自动引入components文件夹组件
+- 自动引入elementPlus组件
+- 支持typescript
+- 封装axios
+- 集成tailwindcss、elementPlus
+- 提供丰富组件
 > **node>=18**
 
 ## 项目启动
