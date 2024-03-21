@@ -28,7 +28,8 @@ const routes: Array<RouteRecordRaw> = [
                 {path: '/other/sendRequest', meta: {title: '发送请求'}, component: () => import('@/views/example/other/SendRequest/index.vue')},
                 {path: '/other/uploadFace', meta: {title: '修改头像'}, component: () => import('@/views/example/other/UploadFace/index.vue')},
             ]
-        }
+        },
+        {path: '/test', meta: {title: '测试'}, component: () => import('@/views/test/index.vue')},
     ]},
     {path: '/login', component: () => import('@/views/Login/index.vue')}
 ]

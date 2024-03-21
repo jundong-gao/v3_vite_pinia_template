@@ -25,8 +25,8 @@
         <div class="layout-main flex">
             <div class="menu">
                 <div class="menu-btn flex-jac" @click="isCollapse = !isCollapse">
-                    <el-icon v-if="isCollapse" color="#333"><DArrowRight /></el-icon>
-                    <el-icon v-if="!isCollapse" color="#333"><DArrowLeft /></el-icon>
+                    <el-icon v-if="isCollapse" color="#333"><i-ep-DArrowRight /></el-icon>
+                    <el-icon v-if="!isCollapse" color="#333"><i-ep-DArrowLeft /></el-icon>
                 </div>
                 <base-menu class="menu-real" :isCollapse="isCollapse"></base-menu>
             </div>

@@ -23,7 +23,7 @@ export interface IFpsOptions {
  *  - destory 销毁函数
  *  - restart 重新计算
  */
-export const useFps = (options: IFpsOptions = {delay: 10, infinite: true} ): {fps: Ref<number>, destory: Function, restart: Function} => {
+export const useFps = (options: IFpsOptions = {delay: 10, infinite: true} ): {fps: Ref<number>, destory: (...args:any[]) => void, restart: (...args: any[]) => void} => {
     let fps = ref(0)
     let delay = options.delay
     let reqId = ref(0)
