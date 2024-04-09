@@ -20,6 +20,9 @@ dependencies:
   element-plus:
     specifier: ^2.5.3
     version: 2.5.6(vue@3.4.19)
+  gao-tooltip:
+    specifier: ^1.1.2
+    version: 1.1.2(typescript@5.3.3)
   path:
     specifier: ^0.12.7
     version: 0.12.7
@@ -1510,6 +1513,15 @@ packages:
     resolution: {integrity: sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA==}
     dev: true
 
+  /gao-tooltip@1.1.2(typescript@5.3.3):
+    resolution: {integrity: sha512-3e7nyvynk9pizf9iEZdW7ubasd5xD7uoE6BLSjFKy7kjOuDSvb3F+hPWrnLOCxQ9gc0VOSwDqPWWDoA1IyT63Q==}
+    dependencies:
+      sass: 1.74.1
+      vue: 3.4.19(typescript@5.3.3)
+    transitivePeerDependencies:
+      - typescript
+    dev: false
+
   /gensync@1.0.0-beta.2:
     resolution: {integrity: sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==}
     engines: {node: '>=6.9.0'}
@@ -2166,6 +2178,16 @@ packages:
       chokidar: 3.6.0
       immutable: 4.3.5
       source-map-js: 1.0.2
+
+  /sass@1.74.1:
+    resolution: {integrity: sha512-w0Z9p/rWZWelb88ISOLyvqTWGmtmu2QJICqDBGyNnfG4OUnPX9BBjjYIXUpXCMOOg5MQWNpqzt876la1fsTvUA==}
+    engines: {node: '>=14.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.6.0
+      immutable: 4.3.5
+      source-map-js: 1.0.2
+    dev: false
 
   /scss@0.2.4:
     resolution: {integrity: sha512-4u8V87F+Q/upVhUmhPnB4C1R11xojkRkWjExL2v0CX2EXTg18VrKd+9JWoeyCp2VEMdSpJsyAvVU+rVjogh51A==}

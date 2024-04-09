@@ -22,6 +22,11 @@ const routes: Array<RouteRecordRaw> = [
                 {path: '/hooks/intervalCallback', meta: {title: 'intervalCallback'}, component: () => import('@/views/example/hooks/IntervalCallback/index.vue')},
             ]
         },
+        {path: '/directive', meta: {title: '指令'}, redirect: '/directive/tooltip', 
+            children: [
+                {path: '/directive/tooltip', meta: {title: 'tooltip'}, component: () => import('@/views/example/directive/Tooltip/index.vue')},
+            ]
+        },
         {path: '/other', meta: {title: '其他'}, redirect: '/other/readbase64', 
             children: [
                 {path: '/other/readbase64', meta: {title: '读取文件原始内容'}, component: () => import('@/views/example/other/ReadBase64/index.vue')},

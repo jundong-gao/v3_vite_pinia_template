@@ -7,6 +7,7 @@ import { createPinia } from 'pinia'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import '@/styles/tailwind.css'
 import 'element-plus/dist/index.css'
+import { tooltip } from 'gao-tooltip'
 
 
 const app = createApp(App)
@@ -15,7 +16,12 @@ const pinia = createPinia()
 // pinia持久化插件
 pinia.use(piniaPluginPersistedstate)
 
-
+// tooltip指令
+app.use(tooltip, {
+  maxWidth: 500,
+  delay: 100,
+  theme: 'dark'
+})
 
 app.use(pinia)
 app.use(router)

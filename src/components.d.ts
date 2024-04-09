@@ -14,6 +14,7 @@ declare module 'vue' {
     BaseTable: typeof import('./components/global/BaseTable/index.vue')['default']
     BaseTest: typeof import('./components/global/BaseTest/index.vue')['default']
     BaseWaterMark: typeof import('./components/global/BaseWaterMark/index.vue')['default']
+    ElAlert: typeof import('element-plus/es')['ElAlert']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCol: typeof import('element-plus/es')['ElCol']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']

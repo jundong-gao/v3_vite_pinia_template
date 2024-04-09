@@ -14,6 +14,7 @@
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "axios": "^1.6.7",
     "element-plus": "^2.5.3",
+    "gao-tooltip": "^1.1.2",
     "path": "^0.12.7",
     "pinia": "^2.1.7",
     "pinia-plugin-persistedstate": "^3.2.1",
