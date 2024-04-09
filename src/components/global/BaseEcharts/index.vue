@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <div class="h-full w-full" ref="echartsRef"></div>
-  </div>
+  <div class="h-full w-full" ref="echartsRef"></div>
 </template>
 
 <script setup lang="ts">
@@ -67,7 +65,7 @@ const props = defineProps({
   }
 })
 const echartsRef = ref<HTMLElement>()
-let echartsInstance:echarts.ECharts 
+let echartsInstance:echarts.ECharts|null = null
 
 onMounted(() => {
   init()
@@ -80,10 +78,13 @@ watch(() => props.options, (opt) => {
 })
 
 function init() {
-  console.log('echartsRef.value::::::::::::::::', echartsRef.value)
   echartsInstance = echarts.init(echartsRef.value as HTMLElement)
   echartsInstance.setOption(props.options)
 }
+
+defineExpose({
+  echartsInstance
+})
 
 </script>
 
