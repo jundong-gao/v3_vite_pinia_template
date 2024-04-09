@@ -13,6 +13,7 @@
     "@types/node": "^20.11.10",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "axios": "^1.6.7",
+    "echarts": "^5.3.3",
     "element-plus": "^2.5.3",
     "gao-tooltip": "^1.1.2",
     "path": "^0.12.7",

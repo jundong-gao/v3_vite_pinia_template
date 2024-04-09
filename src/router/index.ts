@@ -27,6 +27,11 @@ const routes: Array<RouteRecordRaw> = [
                 {path: '/directive/tooltip', meta: {title: 'tooltip'}, component: () => import('@/views/example/directive/Tooltip/index.vue')},
             ]
         },
+        {path: '/echarts', meta: {title: 'echarts'}, redirect: '/echarts/line', 
+            children: [
+                {path: '/echarts/line', meta: {title: '线形图'}, component: () => import('@/views/example/echarts/Line/index.vue')},
+            ]
+        },
         {path: '/other', meta: {title: '其他'}, redirect: '/other/readbase64', 
             children: [
                 {path: '/other/readbase64', meta: {title: '读取文件原始内容'}, component: () => import('@/views/example/other/ReadBase64/index.vue')},
