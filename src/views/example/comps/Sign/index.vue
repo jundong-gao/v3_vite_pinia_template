@@ -6,7 +6,7 @@
   <div>
     <base-button type="primary" @click.stop="getUrl">获取临时url</base-button>
     <base-button type="primary" @click.stop="getBlob">获取临时blob对象</base-button>
-    <!-- <base-button type="primary" @click.stop="reset">重置</base-button> -->
+    <base-button type="primary" @click.stop="reset">重置</base-button>
   </div>
 </template>
 
@@ -26,9 +26,9 @@ function getBlob() {
   })
 }
 
-// function reset() {
-//   signRef.value?.reset()
-// }
+function reset() {
+  signRef.value?.reset()
+}
 </script>
 
 <style lang="scss" scoped>

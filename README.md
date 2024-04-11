@@ -59,3 +59,22 @@ npm run dev
 - BaseWaterMark
   - 通用水印组件
   - 接收config属性 :config={text: string, color: string, fontSize: number, gap: number, zIndex: number}
+
+
+
+
+#### @wangeditor/editor-for-vue 打包报错问题
+> Could not find a declaration file for module '@wangeditor/editor-for-vue'. '/Users/gaojundong/study-demo/v3TsPiniaTemplate/node_modules/.pnpm/@wangeditor+editor-for-vue@5.1.12_@wangeditor+editor@5.1.23_vue@3.4.19/node_modules/@wangeditor/editor-for-vue/dist/index.esm.js' implicitly has an 'any' type.
+  There are types at '/Users/gaojundong/study-demo/v3TsPiniaTemplate/node_modules/@wangeditor/editor-for-vue/dist/src/index.d.ts', but this result could not be resolved when respecting package.json "exports". The '@wangeditor/editor-for-vue' library may need to update its package.json or typings.
+
+- 解决方法
+  - 找到 `node_modules/@wangeditor/editor-for-vue/package.json`文件
+  - 删除以下配置
+  ```json
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+  }
+  ```

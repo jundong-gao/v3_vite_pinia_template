@@ -30,8 +30,8 @@ dependencies:
     specifier: ^2.5.3
     version: 2.5.6(vue@3.4.19)
   gao-canvas-sign:
-    specifier: ^0.0.7
-    version: 0.0.7(typescript@5.3.3)
+    specifier: ^0.1.0
+    version: 0.1.0(typescript@5.3.3)
   gao-tooltip:
     specifier: ^1.1.2
     version: 1.1.2(typescript@5.3.3)
@@ -1869,8 +1869,8 @@ packages:
       - typescript
     dev: false
 
-  /gao-canvas-sign@0.0.7(typescript@5.3.3):
-    resolution: {integrity: sha512-MEKeXSFMZvQFjFk8dbrkNVRE4pcExWyiCn3NXpEfyON4ktapX1EXRkeS3VVkLUGrliIvsWolNav2sNkpgjtUgg==}
+  /gao-canvas-sign@0.1.0(typescript@5.3.3):
+    resolution: {integrity: sha512-xJTYkabdEB7h+WXsuHXeoP1LKmZmHtCJH3aQx7bKHoYlLY3/PX0HyeYqKx3xJQpVF1vbBulSAATpfDQZ5pnFkg==}
     dependencies:
       gao-canvas-sign: 0.0.5(typescript@5.3.3)
       uuid: 9.0.1

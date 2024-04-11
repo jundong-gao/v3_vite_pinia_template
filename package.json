@@ -17,7 +17,7 @@
     "axios": "^1.6.7",
     "echarts": "^5.3.3",
     "element-plus": "^2.5.3",
-    "gao-canvas-sign": "^0.0.7",
+    "gao-canvas-sign": "^0.1.0",
     "gao-tooltip": "^1.1.2",
     "path": "^0.12.7",
     "pinia": "^2.1.7",
