@@ -23,6 +23,9 @@ dependencies:
   element-plus:
     specifier: ^2.5.3
     version: 2.5.6(vue@3.4.19)
+  gao-canvas-sign:
+    specifier: ^0.0.7
+    version: 0.0.7(typescript@5.3.3)
   gao-tooltip:
     specifier: ^1.1.2
     version: 1.1.2(typescript@5.3.3)
@@ -1523,6 +1526,43 @@ packages:
     resolution: {integrity: sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA==}
     dev: true
 
+  /gao-canvas-sign@0.0.3(typescript@5.3.3):
+    resolution: {integrity: sha512-JfKnJoh4HzqBNi1yZSYnfMtXX11NKAimax9Yy6OEfph5daWkKgb680uaBq41wBeCACR7C87tjqYVow+MIS/tpg==}
+    dependencies:
+      vue: 3.4.19(typescript@5.3.3)
+    transitivePeerDependencies:
+      - typescript
+    dev: false
+
+  /gao-canvas-sign@0.0.4(typescript@5.3.3):
+    resolution: {integrity: sha512-lt0SLalqkmjNXTIHtMP6wiHkaW8KZVy9syJ6ZaiDtx8/XZcBCG1bBhROLr5HE0c0DKm2cJZj4jk76pwb4KvZCQ==}
+    dependencies:
+      gao-canvas-sign: 0.0.3(typescript@5.3.3)
+      vue: 3.4.19(typescript@5.3.3)
+    transitivePeerDependencies:
+      - typescript
+    dev: false
+
+  /gao-canvas-sign@0.0.5(typescript@5.3.3):
+    resolution: {integrity: sha512-hfiVooAtNU8SqW25cKllb6z8tjXbZF1ETqQys/B2BuWw4Avzxo2eglZfiiDvjvP3z7KBw730Saoqh0fE3KR3kw==}
+    dependencies:
+      gao-canvas-sign: 0.0.4(typescript@5.3.3)
+      uuid: 9.0.1
+      vue: 3.4.19(typescript@5.3.3)
+    transitivePeerDependencies:
+      - typescript
+    dev: false
+
+  /gao-canvas-sign@0.0.7(typescript@5.3.3):
+    resolution: {integrity: sha512-MEKeXSFMZvQFjFk8dbrkNVRE4pcExWyiCn3NXpEfyON4ktapX1EXRkeS3VVkLUGrliIvsWolNav2sNkpgjtUgg==}
+    dependencies:
+      gao-canvas-sign: 0.0.5(typescript@5.3.3)
+      uuid: 9.0.1
+      vue: 3.4.19(typescript@5.3.3)
+    transitivePeerDependencies:
+      - typescript
+    dev: false
+
   /gao-tooltip@1.1.2(typescript@5.3.3):
     resolution: {integrity: sha512-3e7nyvynk9pizf9iEZdW7ubasd5xD7uoE6BLSjFKy7kjOuDSvb3F+hPWrnLOCxQ9gc0VOSwDqPWWDoA1IyT63Q==}
     dependencies:
@@ -2564,6 +2604,11 @@ packages:
     resolution: {integrity: sha512-0Pm9hTQ3se5ll1XihRic3FDIku70C+iHUdT/W926rSgHV5QgXsYbKZN8MSC3tJtSkhuROzvsQjAaFENRXr+19A==}
     dependencies:
       inherits: 2.0.3
+    dev: false
+
+  /uuid@9.0.1:
+    resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
+    hasBin: true
     dev: false
 
   /vite-plugin-compression@0.5.1(vite@5.1.3):

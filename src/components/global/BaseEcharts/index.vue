@@ -1,5 +1,7 @@
 <template>
-  <div class="h-full w-full" ref="echartsRef"></div>
+  <div>
+    <div class="h-full w-full" ref="echartsRef"></div>
+  </div>
 </template>
 
 <script setup lang="ts">
