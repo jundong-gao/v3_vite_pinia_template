@@ -12,6 +12,8 @@
     "@element-plus/icons-vue": "^2.3.1",
     "@types/node": "^20.11.10",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "@wangeditor/editor": "^5.1.23",
+    "@wangeditor/editor-for-vue": "^5.1.12",
     "axios": "^1.6.7",
     "echarts": "^5.3.3",
     "element-plus": "^2.5.3",

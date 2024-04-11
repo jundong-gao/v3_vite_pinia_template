@@ -11,6 +11,7 @@ declare module 'vue' {
     BaseCutImg: typeof import('./components/global/BaseCutImg/index.vue')['default']
     BaseDialog: typeof import('./components/global/BaseDialog/index.vue')['default']
     BaseEcharts: typeof import('./components/global/BaseEcharts/index.vue')['default']
+    BaseEditor: typeof import('./components/global/BaseEditor/index.vue')['default']
     BaseForm: typeof import('./components/global/BaseForm/index.vue')['default']
     BaseMenu: typeof import('./components/global/BaseMenu/index.vue')['default']
     BaseTable: typeof import('./components/global/BaseTable/index.vue')['default']
